@@ -15,9 +15,17 @@ namespace Day2
                 Console.WriteLine("Hello User ! \n This is an interactive app that have 5 options :- \n " +
                 "Press 1 for Factorial functions \n Press 2 for Printing number from 1 to 100 \n " +
                 "Press 3 for Roots of Quadratic Equation \n Press 4 for Print conditional statements on String" +
-                "\n Press 5 for Checking the presence of a,e and p \n Press 6 for Average of float array elements\n" +
-                "Press 7 for Prime Numbers in array \n Press 8 For Shifting all zero to end of array \n Press 9 for finding first repeated element in array \n " +
-                "Press 10 for Checking valid operator and solve the expression \n Press 11 for longest substring without repeating characters \n Press 12 for Exit ");
+                "\n Press 5 for Checking the presence of a,e and p\n Press 6 for Average of float array elements\n" +
+                " Press 7 for Prime Numbers in array \n Press 8 For Shifting all zero to end of array \n Press 9 for finding first repeated element in array \n " +
+                "Press 10 for Checking valid operator and solve the expression \n Press 11 for longest substring without repeating characters \n " +
+                "Press 12 for deleting element in array from desired position \n Press 13 for second largest element in array" +
+                "\n Press 14 for removing duplicates from array and store distinct elements in new array"+
+                 "\n Press 15 for Calculating smallest gap between array elements \n Press 16 for finding probability of head vs tail" +
+                 "\n Press 17 for Finding leap year \n Press 18 for Finding table of power of two \n Press 19 for Find nth Harmonic Number" +
+                 "\n Press 20 for Find Prime factors of a gievn number \n Press 21 for finding Qoutient and Remainder" +
+                 "\n Press 22 for Swapping two numbers \n Press 23 for Identifying Given number is even or odd " +
+                 "\n Press 24 for Idetifying given character is vowel or consonent \n Press 25 for Finding Largest among three " +
+                 "\n Press 26 for Exit");
             
             
                 int a = Convert.ToInt32(Console.ReadLine());
@@ -60,6 +68,51 @@ namespace Day2
                         longestSubstring l=new longestSubstring();
                         break;
                     case 12:
+                        deleteElement delete=new deleteElement();
+                        break;
+                    case 13:
+                        SecondLargest second=new SecondLargest();
+                        break;
+                    case 14:
+                        removeDuplicate remove=new removeDuplicate();
+                        break;
+                    case 15:
+                        smallestGap gap=new smallestGap();
+                        break;
+                    case 16:
+                        Coin c=new Coin();  
+                        break;
+                    case 17:
+                        leapYear leap =new leapYear();
+                        break;
+                    case 18:
+                        powerOf2 power= new powerOf2();
+                        break;
+                    case 19:
+                        harmonicNumber harmonic = new harmonicNumber();
+                        break;
+                    case 20:
+                        Primefactor P= new Primefactor();   
+                        break;
+                    case 21:
+                        QoutientRemainder q=new QoutientRemainder();
+                        break;
+                    case 22:
+                        Console.WriteLine("Enter the value of both Number");
+                        int x=Convert.ToInt32(Console.ReadLine());
+                        int  y= Convert.ToInt32(Console.ReadLine());
+                        SwapTwoNumber swap = new SwapTwoNumber(x, y);
+                        break;
+                    case 23:
+                        EvenOdd e1= new EvenOdd();
+                        break;
+                    case 24:
+                        VowelConsonent v1=new VowelConsonent();
+                        break;
+                    case 25:
+                       LargestAmongThree largest=new LargestAmongThree();
+                        break;
+                    case 26:
                         b = false;
                         break;
                     default:
