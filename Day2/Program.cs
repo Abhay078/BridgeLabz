@@ -25,7 +25,11 @@ namespace Day2
                  "\n Press 20 for Find Prime factors of a gievn number \n Press 21 for finding Qoutient and Remainder" +
                  "\n Press 22 for Swapping two numbers \n Press 23 for Identifying Given number is even or odd " +
                  "\n Press 24 for Idetifying given character is vowel or consonent \n Press 25 for Finding Largest among three " +
-                 "\n Press 26 for Exit");
+                 "\n Press 26 for input and printing 2d array \n Press 27 for finding triplet that sums to zero" +
+                 "\n Press 28 for finding Euclidian Distance \n Press 29 for solving the quadratic equation" +
+                 "\n Press 30 for finding WindChill from temp and wind speed \n Press 31 for simulating gambling" +
+                 "\n Press 32 for simulating stopwatch \n Press 33 for Tic-Tac-Toe Game \n Press 34 for Random Number count" +
+                 "\n Press 35 for Exit  ");
             
             
                 int a = Convert.ToInt32(Console.ReadLine());
@@ -113,6 +117,33 @@ namespace Day2
                        LargestAmongThree largest=new LargestAmongThree();
                         break;
                     case 26:
+                        _2dArray array=new _2dArray();
+                        break;
+                    case 27:
+                        SumofThreeAddZero sumof=new SumofThreeAddZero();
+                        break;
+                    case 28:
+                        Distance distance =new Distance();
+                        break;
+                    case 29:
+                        Quadratic quadratic =new Quadratic();
+                        break;
+                    case 30:
+                        WindChill windChill = new WindChill();
+                        break;
+                    case 31:
+                        Gambler gambler = new Gambler();
+                        break;
+                    case 32:
+                        StopWatch stopWatch= new StopWatch();
+                        break;
+                    case 33:
+                        Cross Tic= new Cross();
+                        break;
+                    case 34:
+                        CouponNumber cs= new CouponNumber();
+                        break;
+                    case 35:
                         b = false;
                         break;
                     default:
