@@ -37,13 +37,13 @@ namespace Problems
                 {
                     sum -= item;
                     Console.WriteLine($"Amount {message}");
-                    Console.WriteLine($"The Cash Balance in Counter is {sum}");
+                    
                 }
                 else
                 {
                     sum += item;
                     Console.WriteLine($"Amount {message}");
-                    Console.WriteLine($"The Cash Balance in Counter is {sum}");
+                    //Console.WriteLine($"The Cash Balance in Counter is {sum}");
                 }
                 
                 ele[++rear]=item;
@@ -63,8 +63,8 @@ namespace Problems
                 }
                 else
                 {
-                  
-                  front++;
+                Console.WriteLine($"The Cash Balance in Counter is {sum}");
+                front++;
                 
                 
                 
