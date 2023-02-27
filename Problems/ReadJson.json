@@ -1,0 +1,26 @@
+{
+  "rice": [
+    {
+      "name": "Basmati",
+      "weight": 500.0,
+      "price_per_kg": 100.0
+      
+    }
+  ],
+  "wheat": [
+    {
+      "name": "Sharbati",
+      "weight": 50.0,
+      "price_per_kg": 50.0
+      
+    }
+  ],
+  "pulses": [
+    {
+      "name": "Toor",
+      "weight": 500.0,
+      "price_per_kg": 100.0
+      
+    }
+  ]
+}
