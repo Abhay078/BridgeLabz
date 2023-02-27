@@ -105,7 +105,7 @@ namespace Problems
                         break;
                     case 7:
                         JsonInventory json = new JsonInventory();
-                        json.WriteJson("D:\\BridgeLabz_Problems\\Problems\\ReadJson.json");
+                        //json.WriteJson("D:\\BridgeLabz_Problems\\Problems\\ReadJson.json");
                         json.ReadJson("D:\\BridgeLabz_Problems\\Problems\\ReadJson.json");
                         break;
                     case 8:
