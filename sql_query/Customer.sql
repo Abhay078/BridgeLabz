@@ -1,4 +1,4 @@
-/*
+
 CREATE DATABASE CustDb;
 
 CREATE TABLE Customer(
@@ -67,7 +67,7 @@ CREATE PROCEDURE spCustomer @city nvarchar(30) AS
 SELECT * FROM Customer WHERE City=@city 
 ;
 
-EXEC spCustomer @city='Ghaziabad';*/
+EXEC spCustomer @city='Ghaziabad';
 
 CREATE VIEW ordergreater4000 AS
 SELECT * FROM OrderTable where TotalAmount>4000;
@@ -94,5 +94,17 @@ SELECT * FROM (SELECT TOP 50 PERCENT * FROM Customer ORDER BY id DESC)var ORDER 
 
 /*select distinct records without using distinct keyword*/
 SELECT * FROM OrderTable GROUP BY id,OrderDate,CustomerId,TotalAmount HAVING COUNT(id) =1; 
+
+/*INNER JOIN*/
+SELECT * FROM Customer INNER JOIN OrderTable ON Customer.id=OrderTable.CustomerId ORDER BY Customer.id;
+
+/*FULL OUTER JOIN*/
+SELECT * FROM Customer FULL OUTER JOIN OrderTable ON Customer.id=OrderTable.CustomerId ORDER BY Customer.id;
+
+/*LEFT JOIN*/
+SELECT * FROM Customer LEFT JOIN OrderTable ON Customer.id=OrderTable.CustomerId ORDER BY Customer.id;
+
+/*RIGHT JOIN*/
+SELECT * FROM Customer RIGHT JOIN OrderTable ON Customer.id=OrderTable.CustomerId ORDER BY Customer.id,OrderTable.id;
 
 

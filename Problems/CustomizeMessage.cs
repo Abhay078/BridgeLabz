@@ -11,11 +11,12 @@ namespace Problems
     internal class CustomizeMessage
     {
         public CustomizeMessage() {
-            string message = " Hello <<name>>, We have your full name as <<full name>> in our system. your contact number is 91-xxxxxxxxxx.Please,let us know in case of any clarification Thank you BridgeLabz 01/01/2016.";
+            string message = " Hello <<name>>, We have your full name as <<full name>> in our system. your contact number is 91-xxxxxxxxxx.Please,let us know in case of any clarification .Email us at xyz@abc.com. Thank you BridgeLabz 01/01/2016.";
             string pattern1 = "<<name>>";
             string pattern2 = "<<full name>>";
             string pattern3 = "91-[x]{10}";
             string pattern4 = @"(((0|1)[0-9]|2[0-9]|3[0-1])\/(0[1-9]|1[0-2])\/((19|20)\d\d))";
+            String pattern5 = @"[A-Za-z0-9]{3,}@[A-Za-z0-9]{3,}.[A-Za-z]{2,10}";
             Console.WriteLine("Enter your first name");
             string replacefirst=Console.ReadLine();
             Console.WriteLine("Enter your last name");
@@ -26,8 +27,9 @@ namespace Problems
             string result2 = Regex.Replace(result1, pattern2, replacefirst +" "+ replacelast);
             string result3 = Regex.Replace(result2, pattern3, contact);
             string result4=Regex.Replace(result3, pattern4, DateTime.Now.ToString("dd/MM/yyyy"));
+            string result5 = Regex.Replace(result4, pattern5, "abhaysrivastava078@gmail.com");
             Console.WriteLine("Message after Modification is :-");
-            Console.WriteLine(result4);
+            Console.WriteLine(result5);
             Console.ReadLine();
 
 
