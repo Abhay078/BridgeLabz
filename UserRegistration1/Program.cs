@@ -12,7 +12,7 @@ namespace UserRegistration1
             {
                 Console.WriteLine("Hello User!");
                 Console.WriteLine("Press 1 for Validating Name\n Press 2 for Validating Email\n Press 3 for Validating Mobile\n Press 4 For validating Password" +
-                    "\n Press 5 for exit");
+                    "\n Press 5 for Mood Analyser \n Press 6 for Exit");
                 Console.WriteLine("Enter the choice");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
@@ -76,6 +76,13 @@ namespace UserRegistration1
                         }
                         break;
                         case 5:
+                        MoodAnalyser m = new MoodAnalyser();
+                        Console.WriteLine("Enter the message");
+                        string message = Console.ReadLine();
+                        Console.WriteLine(m.MoodMessage(message));
+                        
+                        break;
+                    case 6:
                         b = false;
                         break;
                 }
