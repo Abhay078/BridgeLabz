@@ -12,7 +12,7 @@ namespace UnitTestValidation
     {
         MoodAnalyser m=new MoodAnalyser();
         [TestMethod]
-        public void MoodTest()
+        public void GivenHappyString_returnHappyMood()
         {
 
             string s = m.MoodMessage("I am happy Today");

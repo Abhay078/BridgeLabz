@@ -21,10 +21,9 @@ namespace Crud_employee
                 int  id=Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Enter the value of salary you want to update");
                 long salary=Convert.ToInt64(Console.ReadLine());
-                Console.WriteLine("Enter the stored procedure you have create in your database");
-                string query=Console.ReadLine() ;
+                
                 SqlDataAdapter sd = new SqlDataAdapter();
-                sd.SelectCommand = new SqlCommand(query, con);
+                sd.SelectCommand = new SqlCommand("sp_updateEmployee", con);
                 sd.SelectCommand.CommandType = CommandType.StoredProcedure;
                 sd.SelectCommand.Parameters.AddWithValue("@salary", salary);
                 sd.SelectCommand.Parameters.AddWithValue("@id", id);

@@ -16,13 +16,12 @@ namespace Crud_employee
             {
                 string cs= ConfigurationManager.ConnectionStrings["database"].ConnectionString;
                 SqlConnection con = new SqlConnection(cs);
-                Console.WriteLine("Enter the query");
-                string query=Console.ReadLine();
+                
                 Console.WriteLine("Enter the salary amount you want to select");
                 string salary = Console.ReadLine();
                 //string query = "sp_selectEmployee"; 
                 SqlDataAdapter sda=new SqlDataAdapter();
-                sda.SelectCommand = new SqlCommand(query, con);
+                sda.SelectCommand = new SqlCommand("sp_selectEmployee", con);
                 sda.SelectCommand.CommandType = CommandType.StoredProcedure;
                 
                 sda.SelectCommand.Parameters.AddWithValue("@Salary", salary);
