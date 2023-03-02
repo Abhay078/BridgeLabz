@@ -6,35 +6,89 @@ using System.Threading.Tasks;
 
 namespace CabInvoiceGenerator
 {
+    
     public class CabInvoice
     {
-        public double totalMultipleSum = 0D;
-        public double MultipleRides(int rides,double distance,double time){
-            for(int i = 1; i <= rides; i++)
-            {
-
-                totalMultipleSum += distance * 10 + time * 1;
-
-
-            }
-            return totalMultipleSum;
+        public enum Ridetype {
+            NORMAL,PREMIUM
             
+        };
+
+        Ridetype ridetype;
+        public double minimumCost;
+        public double distance;
+        public double time;
+        public double totalMultipleSum = 0D;
+        public int costPerKm;
+        public int costPerMin;
+
+        public Dictionary<int, Ride> pairs = new Dictionary<int, Ride>();
+        public CabInvoice(Ridetype ridetype)
+        {
+            this.ridetype= ridetype;
+            if (ridetype.Equals(Ridetype.PREMIUM))
+            {
+                this.costPerMin = 2;
+                this.costPerKm=15;
+                this.minimumCost = 20;
+            }
+            else
+            {
+                this.costPerMin = 1;
+                this.costPerKm=10;
+                this.minimumCost = 5;
+            }
 
         }
-        public double CalculateFare(double distance,double time)
+
+        public double CalculateFare(double distance, double time)
         {
             double totalFare = 0D;
-            totalFare = distance * 10 + time * 1;
-            if (totalFare < 5)
+            totalFare = distance * costPerKm + time * costPerMin;
+            if (totalFare < minimumCost)
             {
-                return 5.0;
+                return minimumCost;
             }
             else
             {
                 return totalFare;
             }
+        }
+
+            public double MultipleRide(Ride[] rides)
+        {
+            double TotalFare = 0D;
+            foreach(var data in rides)
+            {
+                TotalFare += CalculateFare(data.distance, data.time);
+
+            }
+            return TotalFare;
+        }
 
 
+       
+
+
+        
+        public InvoiceSummary CalculateInvoice(Ride[] rides)
+        {
+            double totalFare = this.MultipleRide(rides);
+            InvoiceSummary invoiceSummary = new InvoiceSummary();
+            invoiceSummary.totalfare = totalFare;
+            invoiceSummary.totalNumberOfRides = rides.Count();
+            invoiceSummary.CalculateAverage();
+            return invoiceSummary;
+        }
+
+        public InvoiceSummary RepoFetch(string userid)
+        {
+            Ride[] ride = { new Ride(2.0, 2.0), new Ride(3.0, 2.0) };
+            RideRepository repository = new RideRepository();
+            repository.AddRepo(userid, ride);
+            InvoiceSummary invoiceSummary = new InvoiceSummary();
+            InvoiceSummary result = CalculateInvoice(ride);
+            return result;
         }
     }
 }
